@@ -2,16 +2,15 @@
 #include <complex>
 #include <iostream>
 #include <thread>
-
 /* Namespace Declarations */
 using namespace std;
 
+// Merge Sort Implementation
 void merge(int arr[], int l, int m, int r) {
   int n1 = m - l + 1;
   int n2 = r - m;
 
   int L[n1], R[n2];
-
   for (int i = 0; i < n1; i++)
     L[i] = arr[l + i];
   for (int j = 0; j < n2; j++)
@@ -78,23 +77,12 @@ int main() {
 
   cout << "\nSorted array is \n";
   printArray(arr, arr_size);
-
-  /* The time_req object acts as our clock to measure
-   execution time */
-
   // Start clock
   time_req = clock();
 
   // Set execution time to the duration of time passed
   time_req = clock() - time_req;
-
-  /* This is the difference between the initial system time,
-  clock() and the end time which stops when log
-  is called and your program has finished executing. */
-
-  // Format time in seconds and output to console
-  cout << "\n\n\n\nExecution Time: " << (float)time_req / CLOCKS_PER_SEC
-       << " seconds" << endl;
-
+  cout << "\n\n\n\nExecution Time: " << ((float)time_req / CLOCKS_PER_SEC) * 1000
+       << " mili-seconds" << endl;
   return 0;
 }
